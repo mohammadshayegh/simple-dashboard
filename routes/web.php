@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/addmobile','mobileController@addmobile')->name('addmobile');
+Route::post('/addmobilePost','mobileController@addmobilePost')->name('addmobilePost');

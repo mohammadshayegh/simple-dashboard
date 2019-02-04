@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{route('addmobile')}}" class="btn btn-primary">Add mobile</a>
                 </div>
             </div>
         </div>
