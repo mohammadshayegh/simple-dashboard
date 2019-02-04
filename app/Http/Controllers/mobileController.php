@@ -15,12 +15,19 @@ class mobileController extends Controller
 
     public function addmobilePost(Request $request)
     {
+        $validator= $request->validate([
+            's_id' => 'required|integer',
+            'model' => 'required',
+            'company' => 'required'
+        ]);
+
+
         $mobile = Mobile::create([
             's_id'    => $request->s_id,
             'model'   => $request->model,
             'company' => $request->company
         ]);
         $mobile->save();
-        return back();
+        return redirect()->route('home');
     }
 }
