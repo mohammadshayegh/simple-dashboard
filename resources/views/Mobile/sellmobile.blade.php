@@ -1,27 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8" style="margin-top:10px;">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
-
-                    <div class="card-body">
-                        <a href="{{route('addmobile')}}" class="btn btn-primary">Add mobile</a>
-                    </div>
-                </div>
-            </div>
-            @foreach($mobiles as $mobile)
-                <div class="col-md-8" style="margin-top:10px;">
-                    <div class="card">
-                        <a href="{{route('sellmobile',['s_id' => $mobile->s_id])}}">
-                            <div class="card-header">Mobile</div>
-                        </a>
+                    <form method="post" action="{{route('sellmobilePost')}}">
+                        @csrf
+                        <div class="card-header">Mobile</div>
                         <div class="card-body">
                             <div class="row">
                                 <label>Id:</label>
                                 <label>{{$mobile->s_id}}</label>
+                                <input type="hidden" name="s_id" value="{{$mobile->s_id}}">
                             </div>
                             <div class="row">
                                 <label>Model:</label>
@@ -31,11 +23,21 @@
                                 <label>Company:</label>
                                 <label>{{$mobile->company}}</label>
                             </div>
+                            <div class="row">
+                                <label>Price:</label>
+                                <input type="text" class="form-control" name="price">
+                            </div>
 
+                            <div class="row">
+                                <button type="submit" class="btn btn-primary">
+                                    Buy
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
+
 @endsection

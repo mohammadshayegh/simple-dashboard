@@ -28,11 +28,11 @@ class HomeController extends Controller
     public function index()
     {
 
-        $filtered_mobile = \DB::table('mobiles')->select('id')->get();
+        $filtered_mobile = \DB::table('sells')->select('mobile_id')->get();
         $ids = [];
         foreach ($filtered_mobile as $item)
         {
-            $ids[count($ids)] = $item->id;
+            $ids[count($ids)] = $item->mobile_id;
         }
         $mobiles = Mobile::where('s_id' , '!=' , $ids)->get();
 

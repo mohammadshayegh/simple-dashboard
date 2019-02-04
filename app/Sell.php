@@ -8,7 +8,7 @@ class Sell extends Model
 {
     //
 
-    protected $fillable = ['price','date'];
+    protected $fillable = ['price','date','user_id','mobile_id'];
 
     public function user()
     {
