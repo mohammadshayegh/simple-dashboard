@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mobile;
 use App\Sell;
+use phpDocumentor\Reflection\Types\Array_;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,13 @@ class HomeController extends Controller
     public function index()
     {
 
-        $mobiles = Mobile::all();
+        $filtered_mobile = \DB::table('mobiles')->select('id')->get();
+        $ids = [];
+        foreach ($filtered_mobile as $item)
+        {
+            $ids[count($ids)] = $item->id;
+        }
+        $mobiles = Mobile::where('s_id' , '!=' , $ids)->get();
 
         return view('home',compact(['mobiles']));
     }
