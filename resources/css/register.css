@@ -59,7 +59,7 @@ input[type="password"] {
 }
 
 #rightside-img {
-  background-image: url("../images/buy-phone.png");
+  background-image: url("../../public/images/buy-phone.png");
   background-position: -55px;
   background-size: cover;
   background-repeat: no-repeat;
