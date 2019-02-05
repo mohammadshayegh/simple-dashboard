@@ -3,7 +3,15 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Dashboard</div>
 
+                    <div class="card-body">
+                        <a href="{{route('addmobile')}}" class="btn btn-primary">Add mobile</a>
+                    </div>
+                </div>
+            </div>
             @foreach($mobiles as $mobile)
                 <div class="col-md-8" style="margin-top:10px;">
                     <div class="card">

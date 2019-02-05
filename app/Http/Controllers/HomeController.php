@@ -29,12 +29,20 @@ class HomeController extends Controller
     {
 
         $filtered_mobile = \DB::table('sells')->select('mobile_id')->get();
+
         $ids = [];
         foreach ($filtered_mobile as $item)
         {
             $ids[count($ids)] = $item->mobile_id;
         }
-        $mobiles = Mobile::where('s_id' , '!=' , $ids)->get();
+
+        if($ids == null)
+        {
+            $mobiles = Mobile::all();
+        }else
+        {
+            $mobiles = Mobile::where('s_id' , '!=' , $ids)->get();
+        }
 
         return view('home',compact(['mobiles']));
     }

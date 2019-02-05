@@ -11,16 +11,32 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function ()
+{
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function ()
+{
+    if (auth()->user()->role == "admin")
+    {
+        return redirect()->route('adminHome');
+    } else
+    {
+        return redirect()->route('userHome');
+    }
+})->name('home');
 
-Route::get('/addmobile','mobileController@addmobile')->name('addmobile');
-Route::post('/addmobilePost','mobileController@addmobilePost')->name('addmobilePost');
 
-Route::get('/sellmobile','mobileController@sellmobile')->name('sellmobile');
-Route::post('/sellmobilePost','mobileController@sellmobilePost')->name('sellmobilePost');
+Route::get('/userHome', 'HomeController@index')->name('userHome');
+Route::get('/adminHome', 'AdminController@index')->name('adminHome');
+
+
+
+Route::get('/addmobile', 'AdminController@addmobile')->name('addmobile');
+Route::post('/addmobilePost', 'AdminController@addmobilePost')->name('addmobilePost');
+
+Route::get('/sellmobile', 'mobileController@sellmobile')->name('sellmobile');
+Route::post('/sellmobilePost', 'mobileController@sellmobilePost')->name('sellmobilePost');
