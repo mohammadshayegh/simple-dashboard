@@ -31,7 +31,10 @@
                                 <label>Company:</label>
                                 <label>{{$mobile->company}}</label>
                             </div>
-
+                            <div class="row">
+                                <a href="{{route('editmobile',['s_id' => $mobile->s_id])}}">Edit</a>
+                                <a href="{{route('deletemobile',['s_id' => $mobile->s_id])}}">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -64,6 +64,36 @@ class AdminController extends Controller
         return redirect()->route('adminHome');
     }
 
+    public function editmobile(Request $request)
+    {
+        $mobile = Mobile::where('s_id' , $request->s_id)->first();
+
+
+        return view('Admin.editmobile', compact(['mobile']));
+    }
+
+    public function editmobilePost(Request $request)
+    {
+
+        $mobile = Mobile::where('s_id' , $request->s_id)->first();
+
+
+        $mobile->model = $request->model;
+        $mobile->company = $request->company;
+        $mobile->save();
+
+        return redirect()->route('adminHome');
+
+    }
+
+    public function deletemobile(Request $request)
+    {
+        $mobile = Mobile::where('s_id' , $request->s_id)->first();
+
+        $mobile->delete();
+        return redirect()->route('adminHome');
+    }
+
 
 
 }

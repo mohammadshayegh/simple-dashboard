@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d132a25e-4dc2-47ec-a254-1043120edef7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/editmobile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/Intro-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/Intro-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/images/buy-phone.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/buy-phone.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,25 +21,30 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1352">
-              <caret line="179" column="81" selection-start-line="179" selection-start-column="81" selection-end-line="179" selection-end-column="81" />
-              <folding>
-                <element signature="e#49#3906#0#Blade" />
-              </folding>
+            <state relative-caret-position="503">
+              <caret line="48" column="79" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="35" column="67" lean-forward="true" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/Theme/pages/register.html">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="909">
-              <caret line="105" column="4" selection-start-line="105" selection-start-column="4" selection-end-line="131" selection-end-column="13" />
+            <state relative-caret-position="519">
+              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
               <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,13 +84,10 @@
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/mobileController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/Theme/index.html" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
@@ -100,6 +95,11 @@
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/css/main.css" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/editmobile.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
       </list>
     </option>
   </component>
@@ -221,32 +221,20 @@
             <path>
               <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Theme" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
@@ -259,14 +247,12 @@
               <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MobileShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="MobileShop" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,18 +303,18 @@
       <workItem from="1549287193702" duration="830000" />
       <workItem from="1549295334640" duration="11646000" />
       <workItem from="1549355929848" duration="4498000" />
-      <workItem from="1549374032479" duration="4446000" />
+      <workItem from="1549374032479" duration="6732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21420000" />
+    <option name="totallyTimeSpent" value="23706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,9 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/mobileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -470,16 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -520,20 +493,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/webpack/bin/webpack.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -568,21 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#2;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -613,15 +557,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="179" column="81" selection-start-line="179" selection-start-column="81" selection-end-line="179" selection-end-column="81" />
-          <folding>
-            <element signature="e#49#3906#0#Blade" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/public/images/buy-phone.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/Theme/pages/register.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -630,6 +567,61 @@
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" />
             <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+          <folding>
+            <element signature="e#49#3898#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/editmobile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="48" column="79" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="35" column="67" lean-forward="true" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

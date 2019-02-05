@@ -40,3 +40,10 @@ Route::post('/addmobilePost', 'AdminController@addmobilePost')->name('addmobileP
 
 Route::get('/sellmobile', 'mobileController@sellmobile')->name('sellmobile');
 Route::post('/sellmobilePost', 'mobileController@sellmobilePost')->name('sellmobilePost');
+
+Route::get('/editmobile','AdminController@editmobile')->name('editmobile');
+Route::post('/editmobilePost','AdminController@editmobilePost')->name('editmobilePost');
+
+
+
+Route::get('/deletemobile','AdminController@deletemobile')->name('deletemobile');
