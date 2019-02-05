@@ -54,16 +54,7 @@
                 </div>
 
                 <!-- inputs -->
-                <form class="row">
-                    <!-- sign up inputs -->
-                    <div class="col-lg-12 unshowElement signup-inputs">
-                        <div class="row">
-                            <input class="col-lg-6 p-3 mt-3 left-rad text-center signup-fname" placeholder="First name"
-                                type="email">
-                            <input class="col-lg-6 p-3 mt-3 right-rad text-center  signup-lname" placeholder="Last name"
-                                type="password">
-                        </div>
-                    </div>
+                <form class="row" id="signin-form">
 
                     <!-- sign in inputs -->
                     <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="username" type="email"
@@ -71,7 +62,28 @@
                     <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="password" type="password"
                         required>
 
-                    <!-- sign up input / re enter password-->
+                    <!-- submit button -->
+                    <div class="col-lg-12 pt-3 pb-3 left-rad right-rad text-center mt-4 text-white cursor-pointer sea-green-bgcolor"
+                        id="signin-submit-btn" onclick="this.parentNode.submit();">Submit</div>
+
+                </form>
+
+                <form class="row unshowElement" id="signup-form">
+                    <!-- sign up inputs -->
+                    <div class="col-lg-12 signup-inputs">
+                        <div class="row">
+                            <input class="col-lg-6 p-3 mt-3 left-rad text-center signup-fname" placeholder="First name"
+                                type="email" required>
+                            <input class="col-lg-6 p-3 mt-3 right-rad text-center  signup-lname" placeholder="Last name"
+                                type="password" required>
+                        </div>
+                    </div>
+
+                    <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="username" type="email"
+                        required>
+                    <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="password" type="password"
+                        required>
+
                     <div class="unshowElement signup-inputs col-lg-12 p-0">
                         <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="re-enter password"
                             type="password" required>
@@ -79,10 +91,9 @@
 
                     <!-- submit button -->
                     <div class="col-lg-12 pt-3 pb-3 left-rad right-rad text-center mt-4 text-white cursor-pointer sea-green-bgcolor"
-                        id="submit-btn" onclick="this.parentNode.submit();">Submit</div>
+                        id="signup-submit-btn" onclick="this.parentNode.submit();">Submit</div>
 
                 </form>
-
                 <!-- accesibilities -->
                 <div class="row text-center mt-3">
                     <div class="col-12 col-md-6 col-lg-6 p-0 cursor-pointer p-3">Forgot Password?</div>
@@ -106,17 +117,8 @@
     <script>
         $(document).ready(function () {
             $('#sign-type').on('click', function () {
-                $('#type-signin').toggleClass('bg-light').toggleClass('text-white');
-                $('#type-signup').toggleClass('bg-light').toggleClass('text-white');
-                $('.signup-inputs').toggleClass('unshowElement');
-
-                if ($('.signup-inputs input').attr('required')) {
-                    $('.signup-inputs input').removeAttr('required');
-                } else {
-                    $('.signup-inputs input').attr('required', 'required');
-                }
-
-
+                $('#signin-form').toggleClass('unshowElement');
+                $('#signup-form').toggleClass('unshowElement');
             });
 
             $('#sign-type').on('click', function () {
@@ -129,6 +131,7 @@
                 }
             })
         })
+
     </script>
 </body>
 
