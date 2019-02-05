@@ -28,16 +28,16 @@ class AdminController extends Controller
         {
             $ids[count($ids)] = $item->mobile_id;
         }
-        if($ids == null)
+        if ($ids == null)
         {
             $mobiles = Mobile::all();
-        }else
+        } else
         {
-            $mobiles = Mobile::where('s_id' , '!=' , $ids)->get();
+            $mobiles = Mobile::where('s_id', '!=', $ids)->get();
         }
 
 
-        return view('Admin.adminHome',compact(['mobiles']));
+        return view('Admin.adminHome', compact(['mobiles']));
     }
 
 
@@ -48,22 +48,54 @@ class AdminController extends Controller
 
     public function addmobilePost(Request $request)
     {
-        $validator= $request->validate([
+        $validator = $request->validate([
             's_id' => 'required|integer',
             'model' => 'required',
             'company' => 'required'
         ]);
 
+        $bool = Mobile::where('s_id', $request->s_id)->first();
+        if ($bool)
+            return view('Admin.addmobile');
 
         $mobile = Mobile::create([
-            's_id'    => $request->s_id,
-            'model'   => $request->model,
+            's_id' => $request->s_id,
+            'model' => $request->model,
             'company' => $request->company
         ]);
         $mobile->save();
         return redirect()->route('adminHome');
     }
 
+    public function editmobile(Request $request)
+    {
+        $mobile = Mobile::where('s_id', $request->s_id)->first();
+
+
+        return view('Admin.editmobile', compact(['mobile']));
+    }
+
+    public function editmobilePost(Request $request)
+    {
+
+        $mobile = Mobile::where('s_id', $request->s_id)->first();
+
+
+        $mobile->model = $request->model;
+        $mobile->company = $request->company;
+        $mobile->save();
+
+        return redirect()->route('adminHome');
+
+    }
+
+    public function deletemobile(Request $request)
+    {
+        $mobile = Mobile::where('s_id', $request->s_id)->first();
+
+        $mobile->delete();
+        return redirect()->route('adminHome');
+    }
 
 
 }
