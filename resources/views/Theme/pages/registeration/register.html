@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mobile Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SCRIPTS  -->
+    <script src="../../scripts/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="../../scripts/popper/popper.min.js"></script>
+    <script src="../../scripts/bootstrap/bootstrap.min.js"></script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/bootstrap/bootstrap.min.css" />
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+
+    <!-- CUSTOMIZED FILES -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../../styles/registeration/style.css" />
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="reg-main-content">
+        <div class="row">
+            <!-- hellllo, it's me -->
+
+            <div class="col-lg-5 ml-5 pb-5 pt-4 pr-5">
+                <!-- sinup / sign in toggle -->
+                <div class="row text-center pb-0 mb-3 cursor-pointer" id="sign-type">
+                    <div class="h1 col-lg-6 m-0 p-3 text-white" id="type-signin">Sign In</div>
+                    <div class="h1 col-lg-6 m-0 p-3 bg-light" id="type-signup">Sign up</div>
+                </div>
+
+                <!-- third party login -->
+                <div class="row text-center cursor-pointer">
+
+                    <div class="col-lg-6 pt-3 pb-3 left-rad text-white facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="pl-3">Facebook</span>
+                    </div>
+
+                    <div class="col-lg-6 pt-3 pb-3 right-rad text-white g-plus">
+                        <i class="fab fa-google-plus-g"></i>
+                        <span class="pl-3">Google+</span>
+                    </div>
+
+                </div>
+
+                <!-- inputs -->
+                <form class="row">
+                    <!-- sign up inputs -->
+                    <div class="col-lg-12 unshowElement signup-inputs">
+                        <div class="row">
+                            <input class="col-lg-6 p-3 mt-3 left-rad text-center signup-fname" placeholder="First name"
+                                type="email">
+                            <input class="col-lg-6 p-3 mt-3 right-rad text-center  signup-lname" placeholder="Last name"
+                                type="password">
+                        </div>
+                    </div>
+
+                    <!-- sign in inputs -->
+                    <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="username" type="email"
+                        required>
+                    <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="password" type="password"
+                        required>
+
+                    <!-- sign up input / re enter password-->
+                    <div class="unshowElement signup-inputs col-lg-12 p-0">
+                        <input class="col-lg-12 p-3 mt-3 left-rad right-rad text-center" placeholder="re-enter password"
+                            type="password" required>
+                    </div>
+
+                    <!-- submit button -->
+                    <div class="col-lg-12 pt-3 pb-3 left-rad right-rad text-center mt-4 text-white cursor-pointer sea-green-bgcolor"
+                        id="submit-btn" onclick="this.parentNode.submit();">Submit</div>
+
+                </form>
+
+                <!-- accesibilities -->
+                <div class="row text-center mt-3">
+                    <div class="col-12 col-md-6 col-lg-6 p-0 cursor-pointer p-3">Forgot Password?</div>
+                    <div class="col-12 col-md-6 col-lg-6 p-0 p-3">
+                        <input type="checkbox" id="rememberMe" name="rememberMe" checked>
+                        <label for="rememberMe">remember me</label>
+                    </div>
+                </div>
+
+                <!-- this is the end... hold your breath and count to 10 -->
+            </div>
+
+
+            <div class="col-lg-5 offset-1 " id="rightside-img">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#sign-type').on('click', function () {
+                $('#type-signin').toggleClass('bg-light').toggleClass('text-white');
+                $('#type-signup').toggleClass('bg-light').toggleClass('text-white');
+                $('.signup-inputs').toggleClass('unshowElement');
+
+                if ($('.signup-inputs input').attr('required')) {
+                    $('.signup-inputs input').removeAttr('required');
+                } else {
+                    $('.signup-inputs input').attr('required', 'required');
+                }
+
+
+            });
+
+            $('#sign-type').on('click', function () {
+                if ($(window).width() < 600) {
+                    let txt = $('#type-signin').text();
+                    if (txt == 'Sign In')
+                        $('#type-signin').text('Sign Up');
+                    else
+                        $('#type-signin').text('Sign In');
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

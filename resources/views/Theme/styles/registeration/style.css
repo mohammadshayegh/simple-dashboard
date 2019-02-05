@@ -1,0 +1,106 @@
+#reg-main-content {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#reg-main-content > row {
+  height: 100;
+}
+
+.right-rad {
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.left-rad {
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+
+.facebook {
+  background-color: #6C8AAE;
+}
+
+.g-plus {
+  background-color: #F57783;
+}
+
+.sea-green-bgcolor {
+  background: #35CB9E;
+}
+
+input[type="email"],
+input[type="password"] {
+  border: 1px solid rgba(128, 128, 128, 0.37);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-lightViolet {
+  color: #6A5D8A;
+}
+
+#sign-type {
+  border-top-right-radius: 70px;
+  border-bottom-right-radius: 70px;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  border: 5px #6A5D8A solid;
+  overflow: hidden;
+  background: #6A5D8A;
+}
+
+#type-signin,
+#type-signup {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+#rightside-img {
+  background-image: url("../../images/buy-phone.png");
+  background-position: -55px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.unshowElement {
+  display: none;
+}
+
+input[type="checkbox"] {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+@media (max-width: 990px) {
+  #type-signin,
+  #type-signup {
+    border-radius: 70px;
+  }
+  .facebook,
+  .signup-fname {
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    margin-bottom: 10px;
+  }
+  .g-plus,
+  .signup-lname {
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    margin-bottom: 10px;
+  }
+  #rightside-img {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #type-signup {
+    display: none;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
