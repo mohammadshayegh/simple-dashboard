@@ -1,11 +1,12 @@
-$green : #00DC81;
-$bright-gray : #F7F8FB;
-
+$green: #00DC81;
+$bright-gray: #F7F8FB;
+$gray: #b3b3b3;
+$nav-width: 50px;
+$transparent-gray: rgba($gray, $alpha: .3);
 @mixin cover {
     width: 100%;
     height: 100%;
 }
-
 
 html,
 body {
@@ -17,28 +18,99 @@ body {
 #dashboard-container {
     @include cover();
     display: grid;
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: $nav-width 1fr;
+    #top-nav {
+        width: 100%;
+        background: white;
+        height: $nav-width;
+        position: absolute;
+        z-index: 1;
+        .left {
+            display: grid;
+            grid-template-columns: $nav-width $nav-width*3 1fr $nav-width $nav-width*5;
+            position: relative;
+            @mixin leftSide-icons {
+                width: $nav-width;
+                height: $nav-width;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            .search,
+            .bell {
+                @include leftSide-icons();
+                font-size: 1rem;
+                color: $gray;
+            }
+            .bell {
+                border-right: 1px solid $transparent-gray;
+                border-left: 1px solid $transparent-gray;
+                position: relative;
+                &::after {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    background: red;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 25%;
+                    right: 25%;
+                }
+            }
+            .nav-brand {
+                @include leftSide-icons();
+                color: $green;
+                font-size: 1.5rem;
+                border-right: 1px solid $transparent-gray;
+                border-bottom: 1px solid $transparent-gray;
+            }
+            .user-small-panel {
+                $img-padding: 10px;
+                padding: $img-padding;
+                display: grid;
+                grid-template-columns: ($nav-width - 2*$img-padding) 1fr;
+                grid-column-gap: 15px;
 
+                .dropdown {
+                    
+                    #dropdownMenuButton {
+                        background: inherit;
 
+                        
+
+                    }
+                    .dropdown-menu {
+                        transform: translateX(-50%);
+                        margin-top: 15px;
+                        max-width: $nav-width*4;
+                        overflow: hidden;
+                    }
+                }
+                &>img {
+                    width: $nav-width - 2*$img-padding;
+                    height: $nav-width - 2*$img-padding;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
     #left-nav {
-
         position: relative;
         background: white;
-
+        border-right: 1px #F0F2F8 solid;
         #v-pills-tab {
-            position: absolute;
+            position: fixed;
             top: 50%;
             transform: translateY(-50%);
-
             .nav-link {
-                color: #b3b3b3;
+                color: $gray;
                 transition: 500ms;
                 border-right: 1px transparent solid;
-
                 &.active {
                     background: white;
                     color: $green;
-                    border-right: 1px rgb(114, 250, 125) solid;
+                    border-right: 1px $green solid;
                     border-radius: 0;
                 }
             }

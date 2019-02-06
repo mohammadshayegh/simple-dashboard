@@ -14,13 +14,111 @@ body {
       grid-template-columns: 50px 1fr;
 }
 
+#dashboard-container #top-nav {
+  width: 100%;
+  background: white;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+#dashboard-container #top-nav .left {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 150px 1fr 50px 250px;
+      grid-template-columns: 50px 150px 1fr 50px 250px;
+  position: relative;
+}
+
+#dashboard-container #top-nav .left .search,
+#dashboard-container #top-nav .left .bell {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+
+#dashboard-container #top-nav .left .bell {
+  border-right: 1px solid rgba(179, 179, 179, 0.3);
+  border-left: 1px solid rgba(179, 179, 179, 0.3);
+  position: relative;
+}
+
+#dashboard-container #top-nav .left .bell::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: red;
+  border-radius: 100%;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+}
+
+#dashboard-container #top-nav .left .nav-brand {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: #00DC81;
+  font-size: 1.5rem;
+  border-right: 1px solid rgba(179, 179, 179, 0.3);
+  border-bottom: 1px solid rgba(179, 179, 179, 0.3);
+}
+
+#dashboard-container #top-nav .left .user-small-panel {
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr;
+      grid-template-columns: 30px 1fr;
+  grid-column-gap: 15px;
+}
+
+#dashboard-container #top-nav .left .user-small-panel .dropdown #dropdownMenuButton {
+  background: inherit;
+}
+
+#dashboard-container #top-nav .left .user-small-panel .dropdown .dropdown-menu {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 15px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+#dashboard-container #top-nav .left .user-small-panel > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
 #dashboard-container #left-nav {
   position: relative;
   background: white;
+  border-right: 1px #F0F2F8 solid;
 }
 
 #dashboard-container #left-nav #v-pills-tab {
-  position: absolute;
+  position: fixed;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -36,7 +134,7 @@ body {
 #dashboard-container #left-nav #v-pills-tab .nav-link.active {
   background: white;
   color: #00DC81;
-  border-right: 1px #72fa7d solid;
+  border-right: 1px #00DC81 solid;
   border-radius: 0;
 }
 /*# sourceMappingURL=dashboard.css.map */
