@@ -30,6 +30,7 @@ body {
   color: #b3b3b3;
   -webkit-transition: 500ms;
   transition: 500ms;
+  border-right: 1px transparent solid;
 }
 
 #dashboard-container #left-nav #v-pills-tab .nav-link.active {

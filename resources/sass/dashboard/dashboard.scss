@@ -33,6 +33,7 @@ body {
             .nav-link {
                 color: #b3b3b3;
                 transition: 500ms;
+                border-right: 1px transparent solid;
 
                 &.active {
                     background: white;
