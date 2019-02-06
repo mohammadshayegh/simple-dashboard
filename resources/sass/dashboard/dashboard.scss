@@ -3,10 +3,13 @@ $bright-gray: #F7F8FB;
 $gray: #b3b3b3;
 $nav-width: 50px;
 $transparent-gray: rgba($gray, $alpha: .3);
+$dark-green : #00663c;
+
 @mixin cover {
     width: 100%;
     height: 100%;
 }
+
 
 html,
 body {
@@ -19,16 +22,19 @@ body {
     @include cover();
     display: grid;
     grid-template-columns: $nav-width 1fr;
+
     #top-nav {
         width: 100%;
         background: white;
         height: $nav-width;
         position: absolute;
         z-index: 1;
+
         .left {
             display: grid;
             grid-template-columns: $nav-width $nav-width*3 1fr $nav-width $nav-width*5;
             position: relative;
+
             @mixin leftSide-icons {
                 width: $nav-width;
                 height: $nav-width;
@@ -37,16 +43,19 @@ body {
                 align-items: center;
                 cursor: pointer;
             }
+
             .search,
             .bell {
                 @include leftSide-icons();
                 font-size: 1rem;
                 color: $gray;
             }
+
             .bell {
                 border-right: 1px solid $transparent-gray;
                 border-left: 1px solid $transparent-gray;
                 position: relative;
+
                 &::after {
                     content: '';
                     width: 6px;
@@ -58,6 +67,7 @@ body {
                     right: 25%;
                 }
             }
+
             .nav-brand {
                 @include leftSide-icons();
                 color: $green;
@@ -65,6 +75,7 @@ body {
                 border-right: 1px solid $transparent-gray;
                 border-bottom: 1px solid $transparent-gray;
             }
+
             .user-small-panel {
                 $img-padding: 10px;
                 padding: $img-padding;
@@ -73,20 +84,70 @@ body {
                 grid-column-gap: 15px;
 
                 .dropdown {
-                    
+
                     #dropdownMenuButton {
                         background: inherit;
-
-                        
-
+                        box-shadow: 1px 1px 1px transparent;
                     }
+
                     .dropdown-menu {
                         transform: translateX(-50%);
-                        margin-top: 15px;
+                        margin-top: 19px;
                         max-width: $nav-width*4;
-                        overflow: hidden;
+                        border-color: #F2BB6E $transparent-gray $transparent-gray $transparent-gray;
+                        border-top-width: 1px;
+                        border-radius: 0;
+                        position: relative;
+                        border-bottom-right-radius: 7px;
+                        border-bottom-left-radius: 7px;
+                        padding-bottom: 0;
+
+                        &::before {
+                            content: '';
+                            border-width: 5px;
+                            border-color: transparent transparent #F2BB6E transparent;
+                            border-style: solid;
+                            position: absolute;
+                            top: -11px;
+                            right: 20px;
+                            z-index: 20;
+                        }
+
+                        .dropdown-item {
+                            overflow: hidden;
+                            padding-bottom: 10px;
+                            padding-top: 10px;
+
+                            &.exit {
+                                color: red;
+                                border-top: 1px solid red;
+                                margin-top: 1rem;
+
+                                i{
+                                    color :red;
+                                }
+                            }
+
+                            i {
+                                color: $dark-green;
+
+                                &.fa-cart-plus {
+                                    transform: translateX(-4px);
+                                }
+                            }
+
+                            span {
+                                margin-left: 5px;
+                            }
+
+
+                        }
+
                     }
                 }
+
+
+
                 &>img {
                     width: $nav-width - 2*$img-padding;
                     height: $nav-width - 2*$img-padding;
@@ -95,18 +156,22 @@ body {
             }
         }
     }
+
     #left-nav {
         position: relative;
         background: white;
         border-right: 1px #F0F2F8 solid;
+
         #v-pills-tab {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
+
             .nav-link {
                 color: $gray;
                 transition: 500ms;
                 border-right: 1px transparent solid;
+
                 &.active {
                     background: white;
                     color: $green;
