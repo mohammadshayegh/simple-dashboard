@@ -32,9 +32,40 @@
         <nav id="top-nav">
             <div class="left">
                 <div class="nav-brand"><i class="fab fa-superpowers"></i></div>
-                <div class="search"><i class="fas fa-search"></i></div>
+
+                <div class="search ml-2">
+                    <div class="search-box">
+                        <input type="text" />
+                        <span></span>
+                    </div>
+                </div>
+
                 <div></div>
-                <div class="bell"><i class="far fa-bell"></i></div>
+                <div class="bell">
+                    <div class="dropdown p-0">
+
+                        <button class="btn p-0 dropdown-toggle" type="button" id="dropdownMenuButton-bell" data-toggle="dropdown">
+                            <i class="far fa-bell"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user-clock"></i>
+                                <span>Sold</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-business-time"></i>
+                                <span>To Do</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-comments"></i>
+                                <span>Messaged</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
                 <div class="user-small-panel">
                     <img src="https://secure.gravatar.com/avatar/504e9dddcd51193e8d1cdc7a424734c0?d=https://www.gamedev.net/uploads/monthly_2017_08/M.png.1a2515ba0a043d6ce6c3f41ee2489e08.png"
                         alt="user">
@@ -45,7 +76,7 @@
                             <span>mohammad shayegh</span>
                         </button>
 
-                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu ">
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-user-alt"></i>
                                 <span>Profile</span>

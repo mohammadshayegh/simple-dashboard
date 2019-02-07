@@ -3,13 +3,13 @@ $bright-gray: #F7F8FB;
 $gray: #b3b3b3;
 $nav-width: 50px;
 $transparent-gray: rgba($gray, $alpha: .3);
-$dark-green : #00663c;
-
+$dark-green: #00663c;
+$red: #f44336;
+$yellow:#FFBF00;
 @mixin cover {
     width: 100%;
     height: 100%;
 }
-
 
 html,
 body {
@@ -22,8 +22,8 @@ body {
     @include cover();
     display: grid;
     grid-template-columns: $nav-width 1fr;
-
     #top-nav {
+
         width: 100%;
         background: white;
         height: $nav-width;
@@ -32,8 +32,47 @@ body {
 
         .left {
             display: grid;
-            grid-template-columns: $nav-width $nav-width*3 1fr $nav-width $nav-width*5;
+            grid-template-columns: $nav-width $nav-width*5 1fr $nav-width $nav-width*5;
             position: relative;
+
+            .dropdown {
+                button {
+                    background: inherit;
+                    box-shadow: 1px 1px 1px transparent;
+                }
+                
+                .dropdown-menu {
+
+                    margin-top: 19px;
+                    max-width: $nav-width*4;
+                    border-color: $dark-green $transparent-gray $transparent-gray $transparent-gray;
+                    border-top-width: 1px;
+                    border-radius: 0;
+                    border-bottom-right-radius: 7px;
+                    border-bottom-left-radius: 7px;
+                    padding-bottom: 0;
+
+                    &::before {
+                        content: '';
+                        border-width: 5px;
+                        border-color: transparent transparent $dark-green transparent;
+                        border-style: solid;
+                        position: absolute;
+                        top: -11px;
+                        right: 14px;
+                        z-index: 20;
+                    }
+
+                    .dropdown-item {
+                        overflow: hidden;
+                        padding-bottom: 10px;
+                        padding-top: 10px;
+
+                        span { margin-left: 5px;}
+
+                    }
+                }
+            }
 
             @mixin leftSide-icons {
                 width: $nav-width;
@@ -44,7 +83,76 @@ body {
                 cursor: pointer;
             }
 
-            .search,
+            .search{
+                position: relative;
+                transform: translateY(25%);
+
+                $search-width : 20px;
+                $search-color : $gray;
+                
+                .search-box {	
+                    input[type="text"] {
+                        border: none;
+                        background: none;
+                        z-index: 1;
+                        width: $search-width;
+                        height: $search-width;
+                        transition: all .25s ease-in .25s;
+                        font-size: .75rem;
+                        line-height:$search-width;
+
+                        &:hover {
+                            cursor: pointer;
+                            &:focus {
+                                cursor: text;
+                            }
+                        }
+                        &:focus {
+                            width: 100%;
+                            padding: 0 10px;
+                            outline: none;
+                            color: black;
+                            background:none;
+                            color: green;
+                            + span {
+                                width: 100%;
+                                height: 27px;
+                                border-color: $green;
+                                &::before {
+                                    width:2px;
+                                    opacity: 0;
+                                    transition: all .25s ease-in;
+                                }
+                            }
+                        }
+                        + span {
+                            z-index: -1;
+                            position: absolute;
+                            border: 2px solid $search-color ;
+                            top: 0;
+                            width: $search-width;
+                            height: $search-width;
+                            transition: all .25s ease-in .25s;
+                            border-radius: 25px;
+                            left: 0;
+
+                            &::before {
+                                transition: all .25s ease-in .5s;
+                                transform-origin: left top;
+                                content: '';
+                                position: absolute;
+                                width: 10px;
+                                height: 2px;
+                                border-radius: 5px;
+                                background: $search-color ;
+                                transform: rotate(45deg) translate(21px, -2px);
+                            }
+                        }
+                    }
+                }
+            }
+
+
             .bell {
                 @include leftSide-icons();
                 font-size: 1rem;
@@ -52,6 +160,7 @@ body {
             }
 
             .bell {
+
                 border-right: 1px solid $transparent-gray;
                 border-left: 1px solid $transparent-gray;
                 position: relative;
@@ -60,14 +169,40 @@ body {
                     content: '';
                     width: 6px;
                     height: 6px;
-                    background: red;
+                    background: $yellow;
                     border-radius: 100%;
                     position: absolute;
                     top: 25%;
                     right: 25%;
                 }
-            }
 
+                .dropdown-toggle {
+                    background: inherit;
+                    width: $nav-width;
+                    height: $nav-width;
+                }
+
+                .dropdown-menu {
+                    margin-left: -118%;
+                    margin-top :  7px;
+                    border-top: 1px $yellow solid;
+
+                    &::before {
+                        border-bottom-color: $yellow;
+                        right: 50%;
+                    }
+
+                    .dropdown-item{
+                        i {
+                            color: $yellow;
+                        }
+                    }
+                }
+
+                .dropdown-toggle::after {display: none;}
+
+            }
+            
             .nav-brand {
                 @include leftSide-icons();
                 color: $green;
@@ -77,76 +212,26 @@ body {
             }
 
             .user-small-panel {
+
                 $img-padding: 10px;
                 padding: $img-padding;
                 display: grid;
                 grid-template-columns: ($nav-width - 2*$img-padding) 1fr;
                 grid-column-gap: 15px;
 
-                .dropdown {
-
-                    #dropdownMenuButton {
-                        background: inherit;
-                        box-shadow: 1px 1px 1px transparent;
+                .dropdown .dropdown-menu .dropdown-item{
+                    &.exit {
+                        color: $red;
+                        border-top: 1px solid $dark-green;
+                        margin-top: 1rem;
+                        i {color: $red;}
                     }
 
-                    .dropdown-menu {
-                        transform: translateX(-50%);
-                        margin-top: 19px;
-                        max-width: $nav-width*4;
-                        border-color: #F2BB6E $transparent-gray $transparent-gray $transparent-gray;
-                        border-top-width: 1px;
-                        border-radius: 0;
-                        position: relative;
-                        border-bottom-right-radius: 7px;
-                        border-bottom-left-radius: 7px;
-                        padding-bottom: 0;
-
-                        &::before {
-                            content: '';
-                            border-width: 5px;
-                            border-color: transparent transparent #F2BB6E transparent;
-                            border-style: solid;
-                            position: absolute;
-                            top: -11px;
-                            right: 20px;
-                            z-index: 20;
-                        }
-
-                        .dropdown-item {
-                            overflow: hidden;
-                            padding-bottom: 10px;
-                            padding-top: 10px;
-
-                            &.exit {
-                                color: red;
-                                border-top: 1px solid red;
-                                margin-top: 1rem;
-
-                                i{
-                                    color :red;
-                                }
-                            }
-
-                            i {
-                                color: $dark-green;
-
-                                &.fa-cart-plus {
-                                    transform: translateX(-4px);
-                                }
-                            }
-
-                            span {
-                                margin-left: 5px;
-                            }
-
-
-                        }
-
+                    i {
+                        color: $dark-green;
+                        &.fa-cart-plus {transform: translateX(-4px);}
                     }
                 }
-
-
 
                 &>img {
                     width: $nav-width - 2*$img-padding;
@@ -154,15 +239,16 @@ body {
                     border-radius: 5px;
                 }
             }
+
         }
     }
-
     #left-nav {
         position: relative;
         background: white;
         border-right: 1px #F0F2F8 solid;
 
         #v-pills-tab {
+
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
@@ -178,7 +264,9 @@ body {
                     border-right: 1px $green solid;
                     border-radius: 0;
                 }
+
             }
+
         }
     }
 }
