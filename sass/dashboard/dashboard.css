@@ -1,8 +1,33 @@
+.btn-green {
+  background-color: #00DC81;
+  border-color: #00DC81;
+  color: white;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.btn-green:hover {
+  background-color: #00e686;
+  border-color: #00e686;
+}
+
+.h7 {
+  font-size: 14px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 html,
 body {
-  min-width: 100vh;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
   background: #F7F8FB;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 #dashboard-container {
@@ -15,7 +40,7 @@ body {
 }
 
 #dashboard-container #top-nav {
-  width: 100%;
+  width: 100vw;
   background: white;
   height: 50px;
   position: absolute;
@@ -45,6 +70,7 @@ body {
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
   padding-bottom: 0;
+  margin-left: -20px;
 }
 
 #dashboard-container #top-nav .left .dropdown .dropdown-menu::before {
@@ -54,7 +80,9 @@ body {
   border-style: solid;
   position: absolute;
   top: -11px;
-  right: 14px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   z-index: 20;
 }
 
@@ -158,6 +186,9 @@ body {
           align-items: center;
   cursor: pointer;
   font-size: 1rem;
+}
+
+#dashboard-container #top-nav .left .bell .fa-bell {
   color: #b3b3b3;
 }
 
@@ -257,9 +288,11 @@ body {
 }
 
 #dashboard-container #left-nav {
-  position: relative;
+  position: fixed;
   background: white;
   border-right: 1px #F0F2F8 solid;
+  height: 100vh;
+  width: 50px;
 }
 
 #dashboard-container #left-nav #v-pills-tab {
@@ -281,5 +314,121 @@ body {
   color: #00DC81;
   border-right: 1px #00DC81 solid;
   border-radius: 0;
+}
+
+#dashboard-container #mainpage-content {
+  margin-top: 50px;
+}
+
+#dashboard-container #mainpage-content .nav-link {
+  color: gray;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  border-bottom: 1px transparent solid;
+}
+
+#dashboard-container #mainpage-content .nav-link.active {
+  background: inherit;
+  color: black;
+  border-radius: 0;
+  position: relative;
+}
+
+@-webkit-keyframes colorChange {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #00DC81;
+  }
+}
+
+@keyframes colorChange {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #00DC81;
+  }
+}
+
+#dashboard-container #mainpage-content .nav-link.active::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  -webkit-animation: colorChange 500ms forwards;
+          animation: colorChange 500ms forwards;
+}
+
+#dashboard-container #mainpage-content #home-pill-tab {
+  border-bottom: 1px rgba(179, 179, 179, 0.3) solid;
+}
+
+#dashboard-container #mainpage-content .dashboard-list {
+  list-style-type: none;
+}
+
+#dashboard-container #mainpage-content .dashboard-list li {
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 1rem 0;
+  border-radius: 8px;
+  -webkit-transition: -webkit-box-shadow 500ms,-webkit-transform 200ms;
+  transition: -webkit-box-shadow 500ms,-webkit-transform 200ms;
+  transition: box-shadow 500ms,transform 200ms;
+  transition: box-shadow 500ms,transform 200ms,-webkit-box-shadow 500ms,-webkit-transform 200ms;
+}
+
+#dashboard-container #mainpage-content .dashboard-list li:not(:first-child) {
+  border: 1px solid rgba(179, 179, 179, 0.3);
+}
+
+#dashboard-container #mainpage-content .dashboard-list li:not(:first-child):hover {
+  -webkit-box-shadow: 1px 1px 30px rgba(179, 179, 179, 0.3);
+          box-shadow: 1px 1px 30px rgba(179, 179, 179, 0.3);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+#dashboard-container #mainpage-content .dashboard-list li:first-child {
+  color: gray;
+  background-color: inherit;
+}
+
+#dashboard-container #mainpage-content .dashboard-list .image-desc-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 3fr;
+      grid-template-columns: 2fr 2fr 3fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-gap: 15px;
+}
+
+#dashboard-container #mainpage-content .dashboard-list .image-desc-container .img-cont {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+#dashboard-container #mainpage-content .dashboard-list .image-desc-container .img-cont img {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=dashboard.css.map */
