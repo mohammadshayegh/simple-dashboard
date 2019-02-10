@@ -52,10 +52,18 @@ body {
         height: $nav-width;
         position: absolute;
         z-index: 1;
+
+        @media screen and (max-width : 360px) {
+            display: none;
+        }
         .left {
             display: grid;
             grid-template-columns: $nav-width $nav-width*5 1fr $nav-width $nav-width*5;
             position: relative;
+
+            @media screen and (max-width : 600px) {
+                grid-template-columns: $nav-width $nav-width*5 1fr $nav-width 50px;
+            }
             .dropdown {
                 button {
                     background: inherit;
@@ -221,6 +229,12 @@ body {
                 display: grid;
                 grid-template-columns: ($nav-width - 2*$img-padding) 1fr;
                 grid-column-gap: 15px;
+
+                @media screen and (max-width : 600px) {
+                    display: none;
+                }
+
+
                 .dropdown .dropdown-menu .dropdown-item {
                     &.exit {
                         color: $red;
@@ -249,7 +263,7 @@ body {
         position: fixed;
         background: white;
         border-right: 1px #F0F2F8 solid;
-        height: 100vh;
+        height: 100%;
         width: $nav-width;
         #v-pills-tab {
             position: fixed;
@@ -272,6 +286,12 @@ body {
     #mainpage-content {
         margin-top: $nav-width;
         $bottom-border-h: 1px;
+        padding: 3rem;
+
+        @media screen and (max-width : 360px) {
+            margin-top: 0;
+            padding: 1rem;
+        }
 
         .nav-link {
             $transition: 500ms;
@@ -312,9 +332,17 @@ body {
             list-style-type: none;
             $list-grid: 1.5fr 1fr 1fr 1fr 1fr 1fr;
             display: grid;
+            $l-maxWidth : 1100px;
+            $m-maxWidth : 750px;
 
-            @media screen and (max-width:1100px) {
-                
+            @media screen and (max-width:$l-maxWidth) {
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 0.5rem;
+            }
+
+            @media screen and (max-width:$m-maxWidth) {
+                grid-template-columns: 1fr;
+                grid-column-gap: 0.5rem;
             }
 
             li {
@@ -324,20 +352,34 @@ body {
                 padding: 0.5rem;
                 align-items: center;
                 text-align: center;
-                margin: 1rem 0;
+                margin: 0.5rem 0;
                 border-radius: 8px;
                 transition: box-shadow 500ms, transform 200ms;
+
+                @media screen and (max-width:1100px) {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 1rem;
+                    margin: 0;
+                }
+
                 &:not(:first-child) {
                     border: 1px solid $transparent-gray;
                     &:hover {
                         box-shadow: 1px 1px 30px $transparent-gray;
                         transform: scale(1.01);
                     }
+
+                    
                 }
+
                 &:first-child {
                     color: gray;
                     background-color: inherit;
+                    @media screen and (max-width : $l-maxWidth){
+                        display: none;
+                    }
                 }
+
             }
             .image-desc-container {
                 display: grid;
@@ -345,15 +387,35 @@ body {
                 justify-content: center;
                 align-items: center;
                 grid-column-gap: 15px;
+                
+
+                @media screen and (max-width:1100px) {
+                    grid-template-columns: 1fr;
+                    grid-column-gap: 0.5rem;
+
+                    .elem-num{
+                        display: none;
+                    }
+                }
                 .img-cont {
                     width: 30px;
                     height: 30px;
                     overflow: hidden;
                     border-radius: 100%;
+                    
+                    @media screen and (max-width:1100px) {
+                        width : 8rem;
+                        height: 8rem;    
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
                     img {
                         @include cover();
                     }
                 }
+
+                
             }
         }
     }
