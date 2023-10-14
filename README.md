@@ -1,5 +1,5 @@
 # simple-dashboard
-## A practice for associating with Fuckin' Bootstrap
+## A practice for associating with Bootstrap
 
 ### 1100px <
 ![xl-size](http://s9.picofile.com/file/8352107176/2019_02_10_13_54_31.png)
